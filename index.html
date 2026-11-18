@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة العطاء الموحدة - النسخة التجريبية 2.0</title>
+    <title>منصة رشيد للشفافية والمتابعة المالية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
@@ -16,29 +16,29 @@
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 
-    <!-- Header (باللون الأزرق الملكي للتمييز) -->
-    <header class="bg-indigo-900 text-white shadow-lg sticky top-0 z-40">
+    <!-- Header -->
+    <header class="bg-teal-900 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="bg-white/10 p-2.5 rounded-xl">
-                    <svg class="w-7 h-7 text-indigo-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <svg class="w-7 h-7 text-teal-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                 </div>
                 <div>
                     <div class="flex items-center gap-2">
-                        <h1 class="text-xl font-bold">منصة العطاء الموحدة (مشروع تجريبي 2)</h1>
-                        <span class="text-[10px] bg-amber-500/30 text-amber-100 border border-amber-400/40 px-2 py-0.5 rounded-full">نسخة التطوير المحلية</span>
+                        <h1 class="text-xl font-bold">منصة رشيد</h1>
+                        <span class="text-[10px] bg-teal-800 text-teal-200 border border-teal-600/50 px-2 py-0.5 rounded-full">نسخة محلية مستقرة</span>
                     </div>
-                    <p class="text-xs text-indigo-200">إدارة ومتابعة التبرعات والمصروفات الميدانية</p>
+                    <p class="text-xs text-teal-200">الشفافية الكاملة والمتابعة المالية المباشرة</p>
                 </div>
             </div>
             <div class="flex items-center gap-3 no-print">
                 <button onclick="openModal('donateModal')" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-xl font-bold shadow transition flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-                    تبرع الآن
+                    تبرع جديد
                 </button>
-                <button onclick="openModal('adminModal')" class="relative bg-indigo-950 hover:bg-slate-900 text-indigo-100 border border-indigo-600/50 px-4 py-2 rounded-xl font-medium transition flex items-center gap-2">
+                <button onclick="openModal('adminModal')" class="relative bg-teal-950 hover:bg-teal-900 text-teal-100 border border-teal-700/50 px-4 py-2 rounded-xl font-medium transition flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    إدارة المنصة
+                    لوحة الإدارة
                     <span id="headerPendingBadge" class="hidden absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold animate-bounce">0</span>
                 </button>
             </div>
@@ -51,7 +51,7 @@
         <!-- KPI Summary Cards -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-4">
-                <div class="bg-indigo-100 text-indigo-800 p-3.5 rounded-xl font-bold">ر.س</div>
+                <div class="bg-teal-100 text-teal-800 p-3.5 rounded-xl font-bold">ر.س</div>
                 <div>
                     <p class="text-xs text-slate-500 font-medium">إجمالي التبرعات (السعودية)</p>
                     <h3 id="totalDonationsSAR" class="text-2xl font-black text-slate-900 mt-1">0 ر.س</h3>
@@ -68,7 +68,7 @@
                 <div class="bg-amber-100 text-amber-800 p-3.5 rounded-xl font-bold">متبقي</div>
                 <div>
                     <p class="text-xs text-slate-500 font-medium">الرصيد المتبقي (السعودية)</p>
-                    <h3 id="remainingSAR" class="text-2xl font-black text-indigo-700 mt-1">0 ر.س</h3>
+                    <h3 id="remainingSAR" class="text-2xl font-black text-teal-700 mt-1">0 ر.س</h3>
                 </div>
             </div>
             <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-4">
@@ -84,12 +84,12 @@
         <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             <div class="p-6 border-b border-slate-100 flex flex-wrap justify-between items-center gap-4">
                 <div>
-                    <h2 class="text-lg font-bold text-slate-900">بيان العمليات المالية المعتمدة</h2>
-                    <p class="text-xs text-slate-500 mt-0.5">نسخة تجريبية مستقلة - تُحفظ البيانات في ذاكرة جهازك</p>
+                    <h2 class="text-lg font-bold text-slate-900">سجل العمليات والشفافية المالية</h2>
+                    <p class="text-xs text-slate-500 mt-0.5">منصة رشيد - بيانات متزامنة محلياً لاختبار الأداء والواجهة</p>
                 </div>
                 <div class="flex items-center gap-2 no-print">
-                    <button onclick="loadDemoData()" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-800 px-3 py-2 rounded-xl font-bold transition text-xs">
-                        + تعبئة بيانات تجريبية
+                    <button onclick="loadDemoData()" class="bg-teal-50 hover:bg-teal-100 text-teal-800 px-3 py-2 rounded-xl font-bold transition text-xs">
+                        + إضافة بيانات تجريبية
                     </button>
                     <button onclick="window.print()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-medium transition text-sm flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
@@ -102,12 +102,12 @@
                     <thead>
                         <tr class="bg-slate-50 text-slate-600 text-xs font-bold border-b border-slate-200">
                             <th class="p-4">التاريخ</th>
-                            <th class="p-4">الاسم / المرجع</th>
+                            <th class="p-4">المرجع / الاسم</th>
                             <th class="p-4">نوع العملية</th>
                             <th class="p-4">المبلغ الأصلي</th>
                             <th class="p-4">سعر الصرف</th>
                             <th class="p-4">المقابل (جنيه سوداني)</th>
-                            <th class="p-4">المشروع / البند</th>
+                            <th class="p-4">المشروع المخصص</th>
                             <th class="p-4 text-center">الإيصال</th>
                         </tr>
                     </thead>
@@ -122,50 +122,50 @@
     <!-- Modal: Donor Form -->
     <div id="donateModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full shadow-2xl overflow-hidden">
-            <div class="bg-indigo-900 text-white p-5 flex justify-between items-center">
-                <h3 class="font-bold text-lg">تسجيل تبرع جديد</h3>
-                <button onclick="closeModal('donateModal')" class="text-indigo-200 hover:text-white font-bold text-xl">&times;</button>
+            <div class="bg-teal-900 text-white p-5 flex justify-between items-center">
+                <h3 class="font-bold text-lg">تسجيل تبرع جديد - منصة رشيد</h3>
+                <button onclick="closeModal('donateModal')" class="text-teal-200 hover:text-white font-bold text-xl">&times;</button>
             </div>
             <form id="submissionForm" onsubmit="handleDonorSubmission(event)" class="p-6 space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">اسم المتبرع أو الكود</label>
-                    <input type="text" id="donName" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm" placeholder="مثال: فاعل خير">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">اسم المتبرع أو كود المشاركة</label>
+                    <input type="text" id="donName" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-teal-500 focus:outline-none text-sm" placeholder="مثال: فاعل خير">
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1">عملة التبرع</label>
-                        <select id="donCurrency" onchange="calculateDonationEquivalent()" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm bg-white">
+                        <label class="block text-xs font-bold text-slate-700 mb-1">العملة</label>
+                        <select id="donCurrency" onchange="calculateDonationEquivalent()" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-teal-500 focus:outline-none text-sm bg-white">
                             <option value="SAR">ريال سعودي (ر.س)</option>
                             <option value="SDG">جنيه سوداني (ج.س)</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 mb-1">المبلغ</label>
-                        <input type="number" id="donAmount" step="0.01" required oninput="calculateDonationEquivalent()" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm" placeholder="0.00">
+                        <input type="number" id="donAmount" step="0.01" required oninput="calculateDonationEquivalent()" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-teal-500 focus:outline-none text-sm" placeholder="0.00">
                     </div>
                 </div>
 
-                <div class="bg-indigo-50/70 p-3 rounded-xl border border-indigo-100 text-xs text-indigo-900 flex justify-between items-center">
+                <div class="bg-teal-50/70 p-3 rounded-xl border border-teal-100 text-xs text-teal-900 flex justify-between items-center">
                     <span>المقابل التقديري بالجنيه السوداني:</span>
                     <span id="donEquivalentSDG" class="font-bold text-sm">-- ج.س</span>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">المشروع / الحملة</label>
-                    <select id="donProject" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm bg-white">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">المشروع</label>
+                    <select id="donProject" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-teal-500 focus:outline-none text-sm bg-white">
                         <option value="سلال غذائية">سلال غذائية</option>
                         <option value="علاج حالات طارئة">علاج حالات طارئة</option>
                         <option value="سقيا الماء">سقيا الماء</option>
-                        <option value="دعم عام للمنصة">دعم عام للمنصة</option>
+                        <option value="دعم عام">دعم عام</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">صورة الإيصال (اختياري)</label>
-                    <input type="file" id="donReceipt" accept="image/*" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">إيصال التحويل (اختياري)</label>
+                    <input type="file" id="donReceipt" accept="image/*" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-teal-50 file:text-teal-700 hover:file:bg-teal-100">
                 </div>
                 <div class="pt-2 flex justify-end gap-3">
                     <button type="button" onclick="closeModal('donateModal')" class="px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 text-sm font-medium">إلغاء</button>
-                    <button type="submit" id="donorSubmitBtn" class="bg-indigo-700 hover:bg-indigo-800 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow">إرسال التبرع</button>
+                    <button type="submit" id="donorSubmitBtn" class="bg-teal-800 hover:bg-teal-900 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow">إرسال التبرع</button>
                 </div>
             </form>
         </div>
@@ -176,22 +176,22 @@
         <div class="bg-white rounded-2xl max-w-4xl w-full shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
             <div class="bg-slate-900 text-white p-5 flex justify-between items-center">
                 <div class="flex items-center gap-2">
-                    <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    <h3 class="font-bold text-lg">إدارة منصة العطاء (تجريبي)</h3>
+                    <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <h3 class="font-bold text-lg">لوحة إدارة منصة رشيد</h3>
                 </div>
                 <button onclick="closeModal('adminModal')" class="text-slate-400 hover:text-white font-bold text-xl">&times;</button>
             </div>
 
             <!-- Login View -->
             <div id="adminLoginView" class="p-8 max-w-md mx-auto w-full my-auto text-center space-y-4">
-                <div class="bg-indigo-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-indigo-700">
+                <div class="bg-teal-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto text-teal-700">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
                 </div>
-                <h4 class="text-lg font-bold text-slate-900">أدخل رمز المشرف</h4>
-                <p class="text-xs text-slate-500">الرمز الافتراضي: <span class="font-bold text-indigo-700">1234</span></p>
+                <h4 class="text-lg font-bold text-slate-900">أدخل رمز الدخول للمشرف</h4>
+                <p class="text-xs text-slate-500">الرمز الافتراضي: <span class="font-bold text-teal-700">1234</span></p>
                 <form onsubmit="handleAdminLogin(event)" class="space-y-3">
-                    <input type="password" id="adminPinInput" required class="w-full text-center tracking-widest text-lg px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="••••">
-                    <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl font-bold text-sm shadow">دخول الإدارة</button>
+                    <input type="password" id="adminPinInput" required class="w-full text-center tracking-widest text-lg px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-teal-500 focus:outline-none" placeholder="••••">
+                    <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl font-bold text-sm shadow">دخول المشرف</button>
                 </form>
             </div>
 
@@ -204,7 +204,7 @@
                             <label class="block text-xs font-bold text-slate-600 mb-1">سعر الصرف (ج.س مقابل الريال)</label>
                             <div class="flex gap-2">
                                 <input type="number" id="globalExchangeRate" step="0.01" class="px-3 py-1.5 rounded-lg border border-slate-300 text-sm w-28 bg-white" placeholder="350">
-                                <button onclick="updateGlobalRate()" class="bg-indigo-700 text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-indigo-800">حفظ</button>
+                                <button onclick="updateGlobalRate()" class="bg-teal-800 text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-teal-900">حفظ</button>
                             </div>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
                     <div class="bg-blue-50/50 p-5 rounded-2xl border border-blue-100 space-y-3">
                         <h4 class="font-bold text-blue-900 flex items-center gap-2 text-sm">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                            تسجيل تحويل بنكي للسودان
+                            تسجيل تحويل مالي للسودان
                         </h4>
                         <form onsubmit="handleAdminTransfer(event)" class="space-y-3">
                             <input type="text" id="transRef" placeholder="مرجع الحوالة" required class="w-full px-3 py-2 rounded-xl border border-blue-200 text-xs bg-white">
@@ -235,11 +235,11 @@
                     <div class="bg-purple-50/50 p-5 rounded-2xl border border-purple-100 space-y-3">
                         <h4 class="font-bold text-purple-900 flex items-center gap-2 text-sm">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            تسجيل مصروف ميداني (السودان)
+                            تسجيل مصروف ميداني
                         </h4>
                         <form onsubmit="handleAdminExpense(event)" class="space-y-3">
                             <div class="grid grid-cols-2 gap-2">
-                                <input type="text" id="expTitle" placeholder="المستفيد / الجهة" required class="w-full px-3 py-2 rounded-xl border border-purple-200 text-xs bg-white">
+                                <input type="text" id="expTitle" placeholder="المستفيد" required class="w-full px-3 py-2 rounded-xl border border-purple-200 text-xs bg-white">
                                 <select id="expCategory" class="w-full px-3 py-2 rounded-xl border border-purple-200 text-xs bg-white">
                                     <option value="علاج حالات طارئة">علاج طارئة</option>
                                     <option value="تطوير وبرامج">تطوير وبرامج</option>
@@ -248,7 +248,7 @@
                                     <option value="أخرى">أخرى</option>
                                 </select>
                             </div>
-                            <input type="number" id="expAmountSDG" step="0.01" placeholder="المبلغ بالجنيه السوداني (ج.س)" required class="w-full px-3 py-2 rounded-xl border border-purple-200 text-xs bg-white">
+                            <input type="number" id="expAmountSDG" step="0.01" placeholder="المبلغ (ج.س)" required class="w-full px-3 py-2 rounded-xl border border-purple-200 text-xs bg-white">
                             <button type="submit" class="w-full bg-purple-700 hover:bg-purple-800 text-white py-2 rounded-xl text-xs font-bold shadow">خصم المصروف</button>
                         </form>
                     </div>
@@ -257,7 +257,7 @@
                 <!-- Pending Approvals -->
                 <div>
                     <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
-                        <span>التبرعات بانتظار الاعتماد</span>
+                        <span>الطلبات المعلقة</span>
                         <span id="pendingCountBadge" class="bg-amber-100 text-amber-800 text-xs px-2.5 py-0.5 rounded-full font-bold">0</span>
                     </h4>
                     <div id="pendingListContainer" class="space-y-3"></div>
@@ -295,10 +295,10 @@
         </div>
     </div>
 
-    <!-- Local Storage App Logic -->
+    <!-- Script Logic -->
     <script>
-        const STORAGE_KEY_TX = 'ataa_platform_v2_tx';
-        const STORAGE_KEY_CFG = 'ataa_platform_v2_cfg';
+        const STORAGE_KEY_TX = 'rashid_platform_tx_v1';
+        const STORAGE_KEY_CFG = 'rashid_platform_cfg_v1';
 
         let allTransactions = JSON.parse(localStorage.getItem(STORAGE_KEY_TX)) || [];
         let appSettings = JSON.parse(localStorage.getItem(STORAGE_KEY_CFG)) || { adminPin: '1234', globalRate: 350 };
@@ -318,12 +318,12 @@
                     id: 'demo_1',
                     date: new Date().toISOString().split('T')[0],
                     createdAt: Date.now() - 300000,
-                    name: 'متبرع كريم (تجريبي)',
+                    name: 'فاعل خير (منصة رشيد)',
                     type: 'تبرع وارد',
                     currency: 'SAR',
-                    amount: 2000,
-                    sarEquivalent: 2000,
-                    sdgEquivalent: 2000 * appSettings.globalRate,
+                    amount: 1500,
+                    sarEquivalent: 1500,
+                    sdgEquivalent: 1500 * appSettings.globalRate,
                     rate: appSettings.globalRate,
                     project: 'سلال غذائية',
                     receipt: '',
@@ -333,10 +333,10 @@
                     id: 'demo_2',
                     date: new Date().toISOString().split('T')[0],
                     createdAt: Date.now() - 200000,
-                    name: 'تحويل بنكي #202',
+                    name: 'حوالة بنكية #303',
                     type: 'تحويل للسودان',
-                    amount: 1000,
-                    sdgEquivalent: 1000 * appSettings.globalRate,
+                    amount: 800,
+                    sdgEquivalent: 800 * appSettings.globalRate,
                     rate: appSettings.globalRate,
                     project: 'سلال غذائية',
                     receipt: '',
@@ -346,10 +346,10 @@
                     id: 'demo_3',
                     date: new Date().toISOString().split('T')[0],
                     createdAt: Date.now() - 100000,
-                    name: 'مركز الرعاية الطبية',
+                    name: 'مستشفى الطوارئ',
                     type: 'مصروف ميداني',
                     category: 'علاج حالات طارئة',
-                    sdgEquivalent: 80000,
+                    sdgEquivalent: 60000,
                     rate: appSettings.globalRate,
                     project: 'علاج حالات طارئة',
                     receipt: '',
@@ -361,7 +361,7 @@
         }
 
         function clearAllData() {
-            if(confirm('هل تريد مسح جميع البيانات التجريبية؟')) {
+            if(confirm('هل تريد مسح جميع البيانات؟')) {
                 allTransactions = [];
                 saveAndRefresh();
             }
@@ -438,7 +438,7 @@
                 saveAndRefresh();
                 closeModal('donateModal');
                 document.getElementById('submissionForm').reset();
-                alert('تم حفظ تبرعك! ادخل (إدارة المنصة) برمز 1234 لاعتماده.');
+                alert('تم حفظ التبرع في منصة رشيد بنجاح! ستظهر بعد اعتمادها من لوحة الإدارة.');
             } catch (err) {
                 alert('حدث خطأ: ' + err.message);
             } finally {
@@ -497,7 +497,7 @@
             saveAndRefresh();
             document.getElementById('expTitle').value = '';
             document.getElementById('expAmountSDG').value = '';
-            alert('تم تسجيل وخصم المصروف بنجاح.');
+            alert('تم تسجيل المصروف بنجاح.');
         }
 
         function approvePending(id) {
@@ -520,7 +520,7 @@
             if(newRate > 0) {
                 appSettings.globalRate = newRate;
                 saveAndRefresh();
-                alert('تم تحديث سعر الصرف.');
+                alert('تم تحديث سعر الصرف بنجاح.');
             }
         }
 
@@ -585,14 +585,14 @@
                     <div class="space-y-1">
                         <div class="flex items-center gap-2">
                             <span class="font-bold text-slate-900">${item.name}</span>
-                            <span class="text-xs bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-md font-medium">${item.currency === 'SDG' ? 'تبرع بالجنيه' : 'تبرع بالريال'}</span>
+                            <span class="text-xs bg-teal-100 text-teal-800 px-2 py-0.5 rounded-md font-medium">${item.currency === 'SDG' ? 'تبرع بالجنيه' : 'تبرع بالريال'}</span>
                             <span class="text-[11px] text-slate-400">${item.date}</span>
                         </div>
                         <p class="text-xs text-slate-600">المبلغ: <strong>${item.amount.toLocaleString()} ${item.currency}</strong> | المقابل: ${item.sdgEquivalent.toLocaleString()} ج.س | المشروع: ${item.project}</p>
                     </div>
                     <div class="flex items-center gap-2">
                         ${item.receipt ? `<button onclick="previewImage('${item.receipt}')" class="text-xs bg-white border border-slate-300 px-3 py-1.5 rounded-lg hover:bg-slate-100 font-medium">الإيصال</button>` : ''}
-                        <button onclick="approvePending('${item.id}')" class="text-xs bg-indigo-700 text-white px-3 py-1.5 rounded-lg hover:bg-indigo-800 font-bold">اعتماد</button>
+                        <button onclick="approvePending('${item.id}')" class="text-xs bg-teal-800 text-white px-3 py-1.5 rounded-lg hover:bg-teal-900 font-bold">اعتماد</button>
                         <button onclick="deleteRecord('${item.id}')" class="text-xs bg-red-100 text-red-700 px-3 py-1.5 rounded-lg hover:bg-red-200 font-bold">رفض</button>
                     </div>
                 </div>
@@ -630,7 +630,7 @@
             const tbody = document.getElementById('publicTableBody');
             
             if(approvedRecords.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" class="text-center py-8 text-slate-400">لا توجد سجلات حالياً. اضغط "+ تعبئة بيانات تجريبية" لتجربة المنصة.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="8" class="text-center py-8 text-slate-400">لا توجد سجلات. اضغط "+ إضافة بيانات تجريبية" للاختبار.</td></tr>';
             } else {
                 tbody.innerHTML = approvedRecords.map(r => {
                     if(r.type === 'تبرع وارد') {
@@ -645,7 +645,7 @@
                         totalSudanSDG -= r.sdgEquivalent;
                     }
 
-                    let badgeColor = 'bg-indigo-100 text-indigo-800';
+                    let badgeColor = 'bg-teal-100 text-teal-800';
                     if(r.type === 'تحويل للسودان') badgeColor = 'bg-blue-100 text-blue-800';
                     if(r.type === 'مصروف ميداني') badgeColor = 'bg-purple-100 text-purple-800';
 
@@ -662,8 +662,8 @@
                             <td class="p-4 font-semibold text-purple-700">${r.sdgEquivalent > 0 ? r.sdgEquivalent.toLocaleString() + ' ج.س' : '--'}</td>
                             <td class="p-4 text-xs text-slate-600">${r.project}</td>
                             <td class="p-4 text-center flex items-center justify-center gap-2">
-                                ${r.receipt ? `<button onclick="previewImage('${r.receipt}')" class="text-indigo-700 hover:text-indigo-800 bg-indigo-50 p-2 rounded-lg transition inline-flex items-center gap-1 text-xs font-bold">عرض</button>` : '<span class="text-slate-400 text-xs">--</span>'}
-                                ${isAdminLoggedIn ? `<button onclick="deleteRecord('${r.id}')" class="text-red-600 hover:bg-red-50 p-2 rounded-lg text-xs font-bold" title="حذف السجل">حذف</button>` : ''}
+                                ${r.receipt ? `<button onclick="previewImage('${r.receipt}')" class="text-teal-800 hover:text-teal-900 bg-teal-50 p-2 rounded-lg transition inline-flex items-center gap-1 text-xs font-bold">عرض</button>` : '<span class="text-slate-400 text-xs">--</span>'}
+                                ${isAdminLoggedIn ? `<button onclick="deleteRecord('${r.id}')" class="text-red-600 hover:bg-red-50 p-2 rounded-lg text-xs font-bold" title="حذف">حذف</button>` : ''}
                             </td>
                         </tr>
                     `;
