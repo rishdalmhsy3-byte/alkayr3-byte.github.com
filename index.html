@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة الشفافية والمتابعة المالية - الجمعية الخيرية</title>
+    <title>منصة الشفافية - نسخة تجريبية محلية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
@@ -26,9 +26,9 @@
                 <div>
                     <div class="flex items-center gap-2">
                         <h1 class="text-xl font-bold">منصة الشفافية والتبرعات الخيرية</h1>
-                        <span id="connectionStatus" class="text-[10px] bg-amber-500/20 text-amber-200 border border-amber-400/30 px-2 py-0.5 rounded-full">جاري الاتصال...</span>
+                        <span class="text-[10px] bg-blue-500/30 text-blue-100 border border-blue-400/40 px-2 py-0.5 rounded-full">وضع التجربة المحلي (بدون سحابة)</span>
                     </div>
-                    <p class="text-xs text-emerald-200">الربط المالي المباشر - تحديث لحظي</p>
+                    <p class="text-xs text-emerald-200">البيانات تُحفظ في ذاكرة المتصفح للتجربة والتطوير</p>
                 </div>
             </div>
             <div class="flex items-center gap-3 no-print">
@@ -85,12 +85,15 @@
             <div class="p-6 border-b border-slate-100 flex flex-wrap justify-between items-center gap-4">
                 <div>
                     <h2 class="text-lg font-bold text-slate-900">سجل المصداقية العام والتحويلات المعتمدة</h2>
-                    <p class="text-xs text-slate-500 mt-0.5">يتم تحديث السجل تلقائياً وفورياً عند اعتماد أي عملية</p>
+                    <p class="text-xs text-slate-500 mt-0.5">يتم حفظ البيانات محلياً في متصفحك للتجربة</p>
                 </div>
-                <div class="flex items-center gap-3 no-print">
+                <div class="flex items-center gap-2 no-print">
+                    <button onclick="loadDemoData()" class="bg-emerald-50 hover:bg-emerald-100 text-emerald-800 px-3 py-2 rounded-xl font-bold transition text-xs">
+                        + إضافة بيانات تجريبية
+                    </button>
                     <button onclick="window.print()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-medium transition text-sm flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-                        طباعة السجل أو حفظ PDF
+                        طباعة السجل
                     </button>
                 </div>
             </div>
@@ -109,7 +112,6 @@
                         </tr>
                     </thead>
                     <tbody id="publicTableBody" class="divide-y divide-slate-100 text-sm">
-                        <tr><td colspan="8" class="text-center py-8 text-slate-400">جاري تحميل البيانات...</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -159,8 +161,8 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">صورة إيصال التحويل</label>
-                    <input type="file" id="donReceipt" accept="image/*" required class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100">
+                    <label class="block text-xs font-bold text-slate-700 mb-1">صورة إيصال التحويل (اختياري في التجربة)</label>
+                    <input type="file" id="donReceipt" accept="image/*" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100">
                 </div>
                 <div class="pt-2 flex justify-end gap-3">
                     <button type="button" onclick="closeModal('donateModal')" class="px-4 py-2 rounded-xl text-slate-600 hover:bg-slate-100 text-sm font-medium">إلغاء</button>
@@ -176,7 +178,7 @@
             <div class="bg-slate-900 text-white p-5 flex justify-between items-center">
                 <div class="flex items-center gap-2">
                     <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    <h3 class="font-bold text-lg">لوحة تحكم المشرف والعمليات المالية</h3>
+                    <h3 class="font-bold text-lg">لوحة تحكم المشرف (الوضع المحلي)</h3>
                 </div>
                 <button onclick="closeModal('adminModal')" class="text-slate-400 hover:text-white font-bold text-xl">&times;</button>
             </div>
@@ -208,10 +210,13 @@
                             </div>
                         </div>
                     </div>
-                    <button onclick="logoutAdmin()" class="text-red-600 hover:bg-red-50 px-3 py-2 rounded-xl text-xs font-bold transition">خروج</button>
+                    <div class="flex items-center gap-2">
+                        <button onclick="clearAllData()" class="bg-red-100 text-red-700 hover:bg-red-200 px-3 py-2 rounded-xl text-xs font-bold transition">مسح كل البيانات</button>
+                        <button onclick="logoutAdmin()" class="text-slate-600 hover:bg-slate-200 px-3 py-2 rounded-xl text-xs font-bold transition">خروج</button>
+                    </div>
                 </div>
 
-                <!-- Admin Action Tabs (Pending, Transfer, Expense, Statement) -->
+                <!-- Admin Action Tabs (Transfer, Expense) -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- تحويل للسودان -->
                     <div class="bg-blue-50/50 p-5 rounded-2xl border border-blue-100 space-y-3">
@@ -220,7 +225,7 @@
                             إرسال تحويل بنكي جديد إلى السودان
                         </h4>
                         <form onsubmit="handleAdminTransfer(event)" class="space-y-3">
-                            <input type="text" id="transRef" placeholder="مرجع التحويل (مثال: حوالة بنك الخرطوم رقم...)" required class="w-full px-3 py-2 rounded-xl border border-blue-200 text-xs bg-white">
+                            <input type="text" id="transRef" placeholder="مرجع التحويل (مثال: حوالة بنك الخرطوم)" required class="w-full px-3 py-2 rounded-xl border border-blue-200 text-xs bg-white">
                             <div class="grid grid-cols-2 gap-2">
                                 <input type="number" id="transAmountSAR" step="0.01" placeholder="المبلغ (ريال سعودي)" required class="w-full px-3 py-2 rounded-xl border border-blue-200 text-xs bg-white">
                                 <input type="text" id="transProject" placeholder="المشروع المخصص" required class="w-full px-3 py-2 rounded-xl border border-blue-200 text-xs bg-white">
@@ -276,7 +281,6 @@
                                 </tr>
                             </thead>
                             <tbody id="adminExpensesTableBody" class="divide-y divide-slate-100">
-                                <tr><td colspan="5" class="text-center py-4 text-slate-400">لا توجد مصروفات مسجلة.</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -294,63 +298,84 @@
         </div>
     </div>
 
-    <!-- Firebase SDKs & App Logic -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot, query, orderBy, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    <!-- Local Storage App Logic (No Cloud) -->
+    <script>
+        const STORAGE_KEY_TX = 'charity_local_transactions_v1';
+        const STORAGE_KEY_CFG = 'charity_local_settings_v1';
 
-        const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_PROJECT_ID.appspot.com",
-            messagingSenderId: "YOUR_SENDER_ID",
-            appId: "YOUR_APP_ID"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        let allTransactions = [];
-        let appSettings = { adminPin: '1234', globalRate: 350 };
+        let allTransactions = JSON.parse(localStorage.getItem(STORAGE_KEY_TX)) || [];
+        let appSettings = JSON.parse(localStorage.getItem(STORAGE_KEY_CFG)) || { adminPin: '1234', globalRate: 350 };
         let isAdminLoggedIn = false;
 
-        // 1. الاستماع اللحظي للإعدادات
-        onSnapshot(doc(db, "settings", "config"), (docSnap) => {
-            if (docSnap.exists()) {
-                appSettings = { ...appSettings, ...docSnap.data() };
-            } else {
-                setDoc(doc(db, "settings", "config"), appSettings);
-            }
-            document.getElementById('globalExchangeRate').value = appSettings.globalRate;
-            calculateDonationEquivalent();
-        });
-
-        // 2. الاستماع اللحظي للعمليات
-        const q = query(collection(db, "transactions"), orderBy("createdAt", "desc"));
-        onSnapshot(q, (snapshot) => {
-            const statusEl = document.getElementById('connectionStatus');
-            statusEl.innerText = "متصل لحظياً ●";
-            statusEl.className = "text-[10px] bg-emerald-500/20 text-emerald-200 border border-emerald-400/30 px-2 py-0.5 rounded-full";
-
-            allTransactions = [];
-            snapshot.forEach((doc) => {
-                allTransactions.push({ id: doc.id, ...doc.data() });
-            });
-
+        // حفظ التغييرات في ذاكرة المتصفح وتحديث الواجهة
+        function saveAndRefresh() {
+            localStorage.setItem(STORAGE_KEY_TX, JSON.stringify(allTransactions));
+            localStorage.setItem(STORAGE_KEY_CFG, JSON.stringify(appSettings));
             renderAll();
             renderPendingList();
             renderAdminExpenses();
-        }, (error) => {
-            console.error("Firebase Error:", error);
-            const statusEl = document.getElementById('connectionStatus');
-            statusEl.innerText = "خطأ في الاتصال";
-            statusEl.className = "text-[10px] bg-red-500/20 text-red-200 border border-red-400/30 px-2 py-0.5 rounded-full";
-        });
+        }
 
-        // ضغط الصورة
+        // تحميل بيانات تجريبية جاهزة لاختبار الواجهة بسرعة
+        function loadDemoData() {
+            const demo = [
+                {
+                    id: 'demo_1',
+                    date: new Date().toISOString().split('T')[0],
+                    createdAt: Date.now() - 300000,
+                    name: 'فاعل خير (تجريبي)',
+                    type: 'تبرع وارد',
+                    currency: 'SAR',
+                    amount: 1000,
+                    sarEquivalent: 1000,
+                    sdgEquivalent: 1000 * appSettings.globalRate,
+                    rate: appSettings.globalRate,
+                    project: 'سلال غذائية',
+                    receipt: '',
+                    status: 'approved'
+                },
+                {
+                    id: 'demo_2',
+                    date: new Date().toISOString().split('T')[0],
+                    createdAt: Date.now() - 200000,
+                    name: 'حوالة بنك الخرطوم #101',
+                    type: 'تحويل للسودان',
+                    amount: 500,
+                    sdgEquivalent: 500 * appSettings.globalRate,
+                    rate: appSettings.globalRate,
+                    project: 'سلال غذائية',
+                    receipt: '',
+                    status: 'approved'
+                },
+                {
+                    id: 'demo_3',
+                    date: new Date().toISOString().split('T')[0],
+                    createdAt: Date.now() - 100000,
+                    name: 'مستشفى الأمل - حالة طارئة',
+                    type: 'مصروف ميداني',
+                    category: 'علاج حالات طارئة',
+                    sdgEquivalent: 50000,
+                    rate: appSettings.globalRate,
+                    project: 'علاج حالات طارئة',
+                    receipt: '',
+                    status: 'approved'
+                }
+            ];
+            allTransactions = [...demo, ...allTransactions];
+            saveAndRefresh();
+        }
+
+        function clearAllData() {
+            if(confirm('هل تريد مسح جميع البيانات التجريبية من المتصفح؟')) {
+                allTransactions = [];
+                saveAndRefresh();
+            }
+        }
+
+        // ضغط الصورة محلياً
         function compressImage(file) {
             return new Promise((resolve) => {
+                if(!file) { resolve(''); return; }
                 const reader = new FileReader();
                 reader.readAsDataURL(file);
                 reader.onload = (event) => {
@@ -358,20 +383,19 @@
                     img.src = event.target.result;
                     img.onload = () => {
                         const canvas = document.createElement('canvas');
-                        const MAX_WIDTH = 800;
+                        const MAX_WIDTH = 600;
                         const scaleSize = MAX_WIDTH / img.width;
                         canvas.width = img.width > MAX_WIDTH ? MAX_WIDTH : img.width;
                         canvas.height = img.width > MAX_WIDTH ? img.height * scaleSize : img.height;
                         const ctx = canvas.getContext('2d');
                         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                        resolve(canvas.toDataURL('image/jpeg', 0.65));
+                        resolve(canvas.toDataURL('image/jpeg', 0.6));
                     };
                 };
             });
         }
 
-        // حساب المقابل التقديري عند كتابة المبلغ من المتبرع
-        window.calculateDonationEquivalent = function() {
+        function calculateDonationEquivalent() {
             const amount = parseFloat(document.getElementById('donAmount').value) || 0;
             const currency = document.getElementById('donCurrency').value;
             const rate = appSettings.globalRate || 350;
@@ -382,14 +406,13 @@
             } else {
                 eqEl.innerText = amount.toLocaleString() + ' ج.س (بالعملة المحلية)';
             }
-        };
+        }
 
-        // إرسال تبرع جديد من المتبرع
-        window.handleDonorSubmission = async function(event) {
+        async function handleDonorSubmission(event) {
             event.preventDefault();
             const submitBtn = document.getElementById('donorSubmitBtn');
             submitBtn.disabled = true;
-            submitBtn.innerText = "جاري الرفع...";
+            submitBtn.innerText = "جاري الحفظ...";
 
             try {
                 const fileInput = document.getElementById('donReceipt');
@@ -402,7 +425,8 @@
                 let sarAmount = currency === 'SAR' ? amount : (amount / rate);
                 let sdgAmount = currency === 'SDG' ? amount : (amount * rate);
 
-                await addDoc(collection(db, "transactions"), {
+                allTransactions.unshift({
+                    id: 'tx_' + Date.now(),
                     date: new Date().toISOString().split('T')[0],
                     createdAt: Date.now(),
                     name: document.getElementById('donName').value,
@@ -417,25 +441,26 @@
                     status: 'pending'
                 });
 
+                saveAndRefresh();
                 closeModal('donateModal');
                 document.getElementById('submissionForm').reset();
-                alert('تم تقديم تبرعك بنجاح! سيتم اعتماده قريباً من الإدارة.');
+                alert('تم حفظ تبرعك محلياً! ادخل لوحة المشرف (1234) لاعتماده.');
             } catch (err) {
                 alert('حدث خطأ: ' + err.message);
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerText = "إرسال التبرع";
             }
-        };
+        }
 
-        // إجراءات المشرف: تحويل بنكي للسودان
-        window.handleAdminTransfer = async function(event) {
+        function handleAdminTransfer(event) {
             event.preventDefault();
             const amountSAR = parseFloat(document.getElementById('transAmountSAR').value);
             const rate = appSettings.globalRate;
             const sdgAmount = amountSAR * rate;
 
-            await addDoc(collection(db, "transactions"), {
+            allTransactions.unshift({
+                id: 'tx_' + Date.now(),
                 date: new Date().toISOString().split('T')[0],
                 createdAt: Date.now(),
                 name: document.getElementById('transRef').value,
@@ -448,20 +473,21 @@
                 status: 'approved'
             });
 
+            saveAndRefresh();
             document.getElementById('transRef').value = '';
             document.getElementById('transAmountSAR').value = '';
             document.getElementById('transProject').value = '';
             alert('تم تسجيل واعتماد التحويل بنجاح.');
-        };
+        }
 
-        // إجراءات المشرف: تسجيل مصروف ميداني (علاج، تطوير، إلخ)
-        window.handleAdminExpense = async function(event) {
+        function handleAdminExpense(event) {
             event.preventDefault();
             const amountSDG = parseFloat(document.getElementById('expAmountSDG').value);
             const category = document.getElementById('expCategory').value;
             const title = document.getElementById('expTitle').value;
 
-            await addDoc(collection(db, "transactions"), {
+            allTransactions.unshift({
+                id: 'tx_' + Date.now(),
                 date: new Date().toISOString().split('T')[0],
                 createdAt: Date.now(),
                 name: title,
@@ -474,68 +500,73 @@
                 status: 'approved'
             });
 
+            saveAndRefresh();
             document.getElementById('expTitle').value = '';
             document.getElementById('expAmountSDG').value = '';
             alert('تم تسجيل المصروف الميداني وخصمه بنجاح.');
-        };
+        }
 
-        // اعتماد طلب معلق
-        window.approvePending = async function(id) {
-            await updateDoc(doc(db, "transactions", id), { status: 'approved' });
-        };
-
-        // حذف سجل أو طلب
-        window.deleteRecord = async function(id) {
-            if(confirm('هل أنت متأكد من حذف هذا السجل نهائياً؟')) {
-                await deleteDoc(doc(db, "transactions", id));
+        function approvePending(id) {
+            const idx = allTransactions.findIndex(t => t.id === id);
+            if(idx !== -1) {
+                allTransactions[idx].status = 'approved';
+                saveAndRefresh();
             }
-        };
+        }
 
-        // تحديث سعر الصرف العام
-        window.updateGlobalRate = async function() {
+        function deleteRecord(id) {
+            if(confirm('هل أنت متأكد من حذف هذا السجل؟')) {
+                allTransactions = allTransactions.filter(t => t.id !== id);
+                saveAndRefresh();
+            }
+        }
+
+        function updateGlobalRate() {
             const newRate = parseFloat(document.getElementById('globalExchangeRate').value);
             if(newRate > 0) {
-                await setDoc(doc(db, "settings", "config"), { globalRate: newRate }, { merge: true });
+                appSettings.globalRate = newRate;
+                saveAndRefresh();
                 alert('تم تحديث سعر الصرف العام.');
             }
-        };
+        }
 
-        // دوال الواجهة
-        window.openModal = function(modalId) {
+        function openModal(modalId) {
             document.getElementById(modalId).classList.remove('hidden');
-            if(modalId === 'adminModal') document.getElementById('adminPinInput').value = '';
-        };
+            if(modalId === 'adminModal') {
+                document.getElementById('adminPinInput').value = '';
+                document.getElementById('globalExchangeRate').value = appSettings.globalRate;
+            }
+            if(modalId === 'donateModal') calculateDonationEquivalent();
+        }
 
-        window.closeModal = function(modalId) {
+        function closeModal(modalId) {
             document.getElementById(modalId).classList.add('hidden');
-        };
+        }
 
-        window.handleAdminLogin = function(event) {
+        function handleAdminLogin(event) {
             event.preventDefault();
             const pin = document.getElementById('adminPinInput').value;
             if(pin === appSettings.adminPin) {
                 isAdminLoggedIn = true;
                 document.getElementById('adminLoginView').classList.add('hidden');
                 document.getElementById('adminDashboardView').classList.remove('hidden');
-                renderAll();
-                renderPendingList();
-                renderAdminExpenses();
+                saveAndRefresh();
             } else {
                 alert('رمز الدخول غير صحيح!');
             }
-        };
+        }
 
-        window.logoutAdmin = function() {
+        function logoutAdmin() {
             isAdminLoggedIn = false;
             document.getElementById('adminDashboardView').classList.add('hidden');
             document.getElementById('adminLoginView').classList.remove('hidden');
-            renderAll();
-        };
+            saveAndRefresh();
+        }
 
-        window.previewImage = function(src) {
+        function previewImage(src) {
             document.getElementById('previewModalImg').src = src;
             openModal('imageModal');
-        };
+        }
 
         function renderPendingList() {
             const pendingItems = allTransactions.filter(t => t.status === 'pending');
@@ -566,7 +597,7 @@
                         <p class="text-xs text-slate-600">المبلغ: <strong>${item.amount.toLocaleString()} ${item.currency}</strong> | المقابل: ${item.sdgEquivalent.toLocaleString()} ج.س | المشروع: ${item.project}</p>
                     </div>
                     <div class="flex items-center gap-2">
-                        <button onclick="previewImage('${item.receipt}')" class="text-xs bg-white border border-slate-300 px-3 py-1.5 rounded-lg hover:bg-slate-100 font-medium">عرض الإيصال</button>
+                        ${item.receipt ? `<button onclick="previewImage('${item.receipt}')" class="text-xs bg-white border border-slate-300 px-3 py-1.5 rounded-lg hover:bg-slate-100 font-medium">عرض الإيصال</button>` : ''}
                         <button onclick="approvePending('${item.id}')" class="text-xs bg-emerald-700 text-white px-3 py-1.5 rounded-lg hover:bg-emerald-800 font-bold">اعتماد</button>
                         <button onclick="deleteRecord('${item.id}')" class="text-xs bg-red-100 text-red-700 px-3 py-1.5 rounded-lg hover:bg-red-200 font-bold">رفض</button>
                     </div>
@@ -605,19 +636,19 @@
             const tbody = document.getElementById('publicTableBody');
             
             if(approvedRecords.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" class="text-center py-8 text-slate-400">لا توجد سجلات مالية معتمدة حتى الآن.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="8" class="text-center py-8 text-slate-400">لا توجد سجلات معتمدة حالياً. اضغط "+ إضافة بيانات تجريبية" بالأعلى لاختبار الشكل.</td></tr>';
             } else {
                 tbody.innerHTML = approvedRecords.map(r => {
                     if(r.type === 'تبرع وارد') {
                         totalDonationsSAR += r.sarEquivalent;
-                        totalSudanSDG += r.sdgEquivalent; // تضاف لصندوق السودان أو تظل محسوبة
+                        totalSudanSDG += r.sdgEquivalent;
                     }
                     if(r.type === 'تحويل للسودان') {
                         totalTransferredSAR += r.amount;
                         totalSudanSDG += r.sdgEquivalent;
                     }
                     if(r.type === 'مصروف ميداني') {
-                        totalSudanSDG -= r.sdgEquivalent; // خصم المصروف الميداني (علاج، تطوير، إلخ)
+                        totalSudanSDG -= r.sdgEquivalent;
                     }
 
                     let badgeColor = 'bg-emerald-100 text-emerald-800';
@@ -650,6 +681,9 @@
             document.getElementById('remainingSAR').innerText = (totalDonationsSAR - totalTransferredSAR).toLocaleString(undefined, {maximumFractionDigits: 2}) + ' ر.س';
             document.getElementById('totalSudanSDG').innerText = totalSudanSDG.toLocaleString(undefined, {maximumFractionDigits: 2}) + ' ج.س';
         }
+
+        // تشغيل العرض عند فتح الصفحة
+        saveAndRefresh();
     </script>
 </body>
 </html>
